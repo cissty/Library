@@ -12,20 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-        <!-- <div class="section">
-            <div class="buttons">
-                <button class="but add">ADD</button>
-                <button class="but remove">REMOVE</button>
-                <button class="but edit">EDIT</button>
-            </div>
-        </div> -->
-
     <header class="header">
         <p onclick="location.reload()" class="library">Library</p>
             <button>Log in</button>
     </header>
 
-    
     <section class="main-container">
     
         <button class="add-a-book" id="show-button" onclick="showForm()">Add a book</button>
@@ -60,16 +51,17 @@
             <button type="submit" id="submit-button">ADD</button>
         </form>
 
-
         <button class="add-a-book" id="show-all-books"> <em> Show my books</em></button>
         <p id="book-text"></p>
-        </section>
-    <section id="second-interface">
-    <button class="a add-a-book" id="show-button" onclick="addNewBooks()">
-       <p> Add a new book </p>
-    </button>
     </section>
-        
+
+
+        <section id="second-interface">
+        <button class="a add-a-book" id="show-button" onclick="addNewBooks()">
+        <p> Add a new book </p>
+        </button>
+        </section>
+            
     <footer class="footer">
         <p><strong>Copyright © 2023 Cissty</strong></p>
         <a href="https://github.com/cissty" target="_blank">
