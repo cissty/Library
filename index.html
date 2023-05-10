@@ -28,7 +28,7 @@
     
     <section class="main-container">
     
-        <button class="add-a-book" id="show-button" onclick="showForm()">+ Add a book</button>
+        <button class="add-a-book" id="show-button" onclick="showForm()">Add a book</button>
 
         <form class="book-form" id="new-book" action="#" method="get">
             <div class="new-book">
@@ -51,19 +51,23 @@
                             Yes
                         </label>
                         <label>
-                            <input type="radio" name="yesno" value="no">
+                            <input type="radio" name="yesno" value="not yet">
                             No
                         </label>
                     </div>
                     
                 </div>
-            <button type="submit">go</button>
+            <button type="submit" id="submit-button">ADD</button>
         </form>
+
 
         <button class="add-a-book" id="show-all-books"> <em> Show my books</em></button>
         <p id="book-text"></p>
         </section>
     <section id="second-interface">
+    <button class="a add-a-book" id="show-button" onclick="addNewBooks()">
+       <p> Add a new book </p>
+    </button>
     </section>
         
     <footer class="footer">
