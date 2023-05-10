@@ -1,3 +1,3 @@
 # Library
 
-live code : https://cissty.github.io/Library/
+live preview : https://cissty.github.io/Library/
