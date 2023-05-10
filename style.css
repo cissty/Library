@@ -97,7 +97,7 @@ body{
   grid-area: main;
   display: none;
   height: max-content;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) ) ;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr) ) ;
   color: #444;
   gap: 20px;
   margin: 2rem;
@@ -114,14 +114,12 @@ body{
   color: #fff;
   border-radius: 5px;
   padding: 20px;
-  font-size: 150%;
+  font-size: 125%;
   white-space: pre;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.box:hover{
-  scale: 1.1;
-}
+
 
 .button-div{
   display: flex;
@@ -135,6 +133,7 @@ background: var(--bg-color-bold);
 box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
 cursor: pointer;
 transition: 0.15s;
+width: 200px;
 }
 
 .remove-button:hover{
