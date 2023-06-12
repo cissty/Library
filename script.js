@@ -28,7 +28,7 @@ const addNewBook = document.getElementById('new-book');
 const showButton = document.getElementById('show-button')
 const header = document.querySelector('header')
 const footer = document.querySelector('footer')
-
+const LogInInterface = document.getElementById('log-in-interface');
 
 
   form.addEventListener('submit', function(event){
@@ -106,3 +106,11 @@ const footer = document.querySelector('footer')
   submitButton.addEventListener('click', () =>{
     bookText.textContent = '';
   }) 
+
+
+  const logIn = document.getElementById('log-in');
+
+  logIn.addEventListener('click', ()=>{
+    firstInterface.style.display = 'none';
+    secondInterface.style.display = 'none';
+  });

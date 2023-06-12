@@ -238,3 +238,22 @@ button[type="submit"]:hover {
   }
 
 
+/* login section */
+
+.login{
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control{
+  display: flex;
+  flex-direction: column;
+}
+
+form > input, form > select {
+  height: 30px;
+  padding-left: 5px;
+}
+
