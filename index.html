@@ -17,7 +17,7 @@
             <button id="log-in">Log in</button>
     </header>
 
-    <section style="display: none;" class="main-container">
+    <section class="main-container">
      
         <button class="add-a-book" id="show-button" onclick="showForm()">Add a book</button>
 
@@ -56,19 +56,20 @@
     </section>
 
 
-    <section id="second-interface" style="display: none;">
+    <section id="second-interface">
         <button class="a add-a-book" id="show-button" onclick="addNewBooks()">
         <p> Add a new book </p>
         </button>
         </section>
 
     <section class="login" id="log-in-interface">
-                <form  class="form-control" action="#">
+                <form  class="form-control" action="#" onsubmit="validateForm(event)">
                         <label for="e-mail">E-Mail:<span style="color: red; display: inline; float: none;"> *</span></label>
-                        <input type="email" name="e-mail" id="e-mail">
+                        <input type="email" name="e-mail" id="e-mail" required>
 
                         <label for="country">Country<span style="color: red; display: inline; float: none;"> *</span></label></label>  
-                            <select id="country" name="country">
+                            <select id="country" name="country" required>
+                                <option style="background-color: rgba(220, 220, 220, 0.712);" selected value="">Select a country</option>
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Åland Islands">Åland Islands</option>
                                 <option value="Albania">Albania</option>
@@ -291,7 +292,7 @@
                                 <option value="Tonga">Tonga</option>
                                 <option value="Trinidad and Tobago">Trinidad and Tobago</option>
                                 <option value="Tunisia">Tunisia</option>
-                                <option selected value="Turkey">Turkey</option>
+                                <option value="Turkey">Turkey</option>
                                 <option value="Turkmenistan">Turkmenistan</option>
                                 <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
                                 <option value="Tuvalu">Tuvalu</option>
@@ -315,18 +316,19 @@
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </select>
 
-                        <label for="zip">Zip Code<span style="color: red; display: inline; float: none;"> *</span> </label>
-                        <input type="text" name="zip" id="zip" pattern="[0-9]">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" name="zip" id="zip">
                         
                         <label for="password">Password<span style="color: red; display: inline; float: none;"> *</span></label>
-                        <input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" required>
 
                         
                         <label for="confirm-password">Confirm Password<span style="color: red; display: inline; float: none;"> *</span></label>
-                        <input type="password" id="confirm-password" name="confirm-password">
+                        <input type="password" id="confirm-password" name="confirm-password" required>
                    
                         <button type="submit">SUBMIT</button>
                     </form>
+                <div id="error-messages"></div>
         </section>
             
     <footer class="footer">

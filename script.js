@@ -29,7 +29,8 @@ const showButton = document.getElementById('show-button')
 const header = document.querySelector('header')
 const footer = document.querySelector('footer')
 const LogInInterface = document.getElementById('log-in-interface');
-
+const logIn = document.getElementById('log-in');
+const submitForm = document.getElementById('log-in-interface')
 
   form.addEventListener('submit', function(event){
     event.preventDefault();
@@ -98,7 +99,6 @@ const LogInInterface = document.getElementById('log-in-interface');
         }
       header.setAttribute('style', 'filter: blur(0px);')
       footer.setAttribute('style', 'filter: blur(0px);')
-
     
   }
   allBooks.addEventListener('click', showSecondInterface);
@@ -108,9 +108,84 @@ const LogInInterface = document.getElementById('log-in-interface');
   }) 
 
 
-  const logIn = document.getElementById('log-in');
-
   logIn.addEventListener('click', ()=>{
     firstInterface.style.display = 'none';
     secondInterface.style.display = 'none';
+    submitForm.style.display = 'flex';
+
   });
+
+function validateForm(event) {
+  event.preventDefault(); 
+
+  // Get form inputs
+  const emailInput = document.getElementById("e-mail");
+  const countryInput = document.getElementById("country");
+  const zipInput = document.getElementById("zip");
+  const passwordInput = document.getElementById("password");
+  const confirmPasswordInput = document.getElementById("confirm-password");
+  const errorMessagesContainer = document.getElementById("error-messages");
+  errorMessagesContainer.innerHTML = ""; 
+
+  // validate email
+  if (!emailInput.checkValidity()) {
+      displayErrorMessage("Please enter a valid email address.");
+      markFieldAsError(emailInput);
+  }
+
+  // validate country
+  if (countryInput.value === "") {
+      displayErrorMessage("Please select a country.");
+      markFieldAsError(countryInput);
+  }
+
+  // validate password
+  if (!validatePassword(passwordInput.value)) {
+      displayErrorMessage("Password must be at least 8 characters long and contain at least one uppercase letter.");
+      markFieldAsError(passwordInput);
+  }
+
+  // validate password confirmation
+  if (confirmPasswordInput.value !== passwordInput.value) {
+      displayErrorMessage("Passwords do not match.");
+      markFieldAsError(confirmPasswordInput);
+  }
+
+  //  error messages, prevent form submission
+  if (errorMessagesContainer.children.length > 0) {
+      return;
+  }
+
+  emailInput.value = "";
+  countryInput.value = "";
+  zipInput.value = "";
+  passwordInput.value = "";
+  confirmPasswordInput.value = "";
+
+  fixField(emailInput)
+  fixField(countryInput)
+  fixField(passwordInput)
+  fixField(confirmPasswordInput)
+  alert("Form submitted successfully!");
+}
+
+function displayErrorMessage(message) {
+  const errorMessagesContainer = document.getElementById("error-messages");
+  const errorMessage = document.createElement("p");
+  errorMessage.classList.add("error-message");
+
+  errorMessage.innerText = message;
+  errorMessagesContainer.appendChild(errorMessage);
+}
+
+function validatePassword(password) {
+  const passwordRegex = /^(?=.*[A-Z]).{8,}$/;
+  return passwordRegex.test(password);
+}
+
+function markFieldAsError(field) {
+  field.style.border = "1px solid red";
+}
+function fixField(field){
+  field.style.border = "none"
+}
